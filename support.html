@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support &amp; FAQ — BioCue</title>
+  <meta name="description" content="Get help with BioCue circadian alarms, Apple Health sync, Widgets, Live Activities, and subscriptions." />
+  <style>
+    :root {
+      --bg: #0f1210;
+      --surface: #181d1a;
+      --border: #2c3630;
+      --text: #f3f1eb;
+      --muted: #b0b8b2;
+      --accent: #e07a5f;
+      --matcha: #81b29a;
+      --ochre: #f2cc8f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Rounded", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--matcha); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 780px; margin: 0 auto; padding: 24px 20px 64px; }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0 28px;
+      border-bottom: 1px solid var(--border);
+    }
+    .brand { font-size: 1.2rem; font-weight: 800; color: var(--text); }
+    .nav-links { display: flex; gap: 18px; font-size: 0.95rem; font-weight: 600; }
+    .nav-links a { color: var(--muted); }
+    .nav-links a.active { color: var(--matcha); }
+    h1 { font-size: 2rem; margin: 32px 0 10px; letter-spacing: -0.02em; }
+    .intro { color: var(--muted); margin-bottom: 28px; }
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin-bottom: 14px;
+    }
+    .faq-item h2 { margin: 0 0 8px; font-size: 1.08rem; color: var(--ochre); }
+    .faq-item p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .contact-card {
+      margin-top: 28px;
+      background: linear-gradient(135deg, rgba(224, 122, 95, 0.14), var(--surface));
+      border: 1px solid rgba(224, 122, 95, 0.35);
+      border-radius: 14px;
+      padding: 22px;
+    }
+    .contact-card h2 { margin: 0 0 8px; font-size: 1.2rem; }
+    .contact-card p { margin: 0 0 14px; color: var(--muted); }
+    .btn {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #111;
+      font-weight: 700;
+      font-size: 0.94rem;
+    }
+    .btn:hover { opacity: 0.92; text-decoration: none; }
+    footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 0.88rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a class="brand" href="./index.html">BioCue</a>
+      <div class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./privacy.html">Privacy Policy</a>
+        <a class="active" href="./support.html">Support</a>
+      </div>
+    </nav>
+
+    <h1>BioCue Support</h1>
+    <p class="intro">Quick answers for getting the most out of your circadian schedule, alarms, widgets, and subscriptions.</p>
+
+    <div class="faq-item">
+      <h2>My morning alarm didn't trigger—what should I check?</h2>
+      <p>Make sure Notifications and AlarmKit permissions are allowed in <strong>iOS Settings &rarr; Apps &rarr; BioCue</strong>. When using the Red-Shift Nightstand Clock overnight, keep your iPhone plugged in and ensure Focus/Silent modes allow Alarms.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>How do I sync Apple Health sleep data?</h2>
+      <p>Open <strong>Settings &rarr; Apple Health Sync</strong> inside BioCue (or iOS <strong>Settings &rarr; Health &rarr; Data Access &amp; Devices &rarr; BioCue</strong>) and turn on Sleep read access and Time in Daylight write access. BioCue automatically backfills your past 7 nights on-device.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>Why isn't my Widget or Live Activity updating?</h2>
+      <p>Widgets refresh automatically on cue completions and wake-time shifts. Make sure Live Activities are enabled under <strong>iOS Settings &rarr; Apps &rarr; BioCue &rarr; Live Activities</strong>. If a widget looks stale after a fresh install, open BioCue once to sync the App Group snapshot.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>How do I restore my BioCue Pro purchase or cancel a subscription?</h2>
+      <p>To restore a prior purchase on a new device, open <strong>BioCue &rarr; Settings &rarr; Privacy &amp; Legal &rarr; Restore StoreKit Purchases</strong>. To manage or cancel an active subscription, open <strong>iOS Settings &rarr; [Your Name] &rarr; Subscriptions &rarr; BioCue</strong>.</p>
+    </div>
+
+    <div class="contact-card">
+      <h2>Need Direct Help or Want to Report a Bug?</h2>
+      <p>Whether you're testing BioCue on TestFlight or using the App Store release, you can report issues, share feedback, or ask questions directly on our GitHub tracker.</p>
+      <a class="btn" href="https://github.com/adelao93/biocue-site/issues/new" target="_blank" rel="noopener">Open a Support Ticket on GitHub &rarr;</a>
+    </div>
+
+    <footer>
+      <span>&copy; 2026 BioCue</span>
+      <span><a href="./index.html">Home</a> &middot; <a href="./privacy.html">Privacy Policy</a></span>
+    </footer>
+  </div>
+</body>
+</html>

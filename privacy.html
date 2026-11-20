@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — BioCue</title>
+  <meta name="description" content="BioCue Privacy Policy. 100% on-device circadian architecture with zero cloud accounts, zero tracking SDKs, and local-only Apple HealthKit processing." />
+  <style>
+    :root {
+      --bg: #0f1210;
+      --surface: #181d1a;
+      --border: #2c3630;
+      --text: #f3f1eb;
+      --muted: #b0b8b2;
+      --accent: #e07a5f;
+      --matcha: #81b29a;
+      --ochre: #f2cc8f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Rounded", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.68;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--matcha); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 780px; margin: 0 auto; padding: 24px 20px 64px; }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0 28px;
+      border-bottom: 1px solid var(--border);
+    }
+    .brand { font-size: 1.2rem; font-weight: 800; color: var(--text); }
+    .nav-links { display: flex; gap: 18px; font-size: 0.95rem; font-weight: 600; }
+    .nav-links a { color: var(--muted); }
+    .nav-links a.active { color: var(--matcha); }
+    h1 { font-size: 2rem; margin: 32px 0 6px; letter-spacing: -0.02em; }
+    .effective { color: var(--muted); font-size: 0.92rem; margin-bottom: 28px; }
+    .summary-box {
+      background: var(--surface);
+      border: 1px solid rgba(129, 178, 154, 0.35);
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin-bottom: 28px;
+    }
+    .summary-box strong { color: var(--matcha); }
+    h2 {
+      font-size: 1.22rem;
+      margin: 28px 0 10px;
+      color: var(--ochre);
+    }
+    p, li { color: var(--muted); font-size: 0.98rem; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; }
+    footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 0.88rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a class="brand" href="./index.html">BioCue</a>
+      <div class="nav-links">
+        <a href="./index.html">Home</a>
+        <a class="active" href="./privacy.html">Privacy Policy</a>
+        <a href="./support.html">Support</a>
+      </div>
+    </nav>
+
+    <h1>BioCue Privacy Policy</h1>
+    <p class="effective">Effective Date: November 20, 2026</p>
+
+    <div class="summary-box">
+      <strong>The Short Version:</strong> BioCue is built with a 100% local-first architecture. We do not operate user accounts, cloud databases, advertising trackers, or remote analytics servers. Your circadian schedule, sleep records, and health data stay on your iPhone.
+    </div>
+
+    <h2>1. Zero Accounts, Zero Tracking, Zero Remote Servers</h2>
+    <p>
+      BioCue does not require registration, email sign-in, or cloud profiles. All circadian anchors, completed daily habits, medication schedules, and sleep logs are stored exclusively on your device using Apple SwiftData, UserDefaults (including the App Group container shared strictly with BioCue's own Widgets and Live Activities), and the iOS Keychain.
+    </p>
+    <p>
+      BioCue contains no third-party advertising SDKs, no behavioral analytics trackers, and no cross-app tracking identifiers.
+    </p>
+
+    <h2>2. Apple HealthKit Data</h2>
+    <p>
+      If you choose to connect Apple Health, BioCue requests permission to:
+    </p>
+    <ul>
+      <li><strong>Read Sleep Analysis:</strong> Used strictly on-device to anchor your wake time and calculate your 7-Day Rhythm Wave and sleep recovery balance.</li>
+      <li><strong>Write Time in Daylight:</strong> Used strictly on-device when you complete Morning Sunlight or Sunset View sessions so your outdoor light minutes appear in Apple Health.</li>
+    </ul>
+    <p>
+      <strong>HealthKit Pledge:</strong> In strict compliance with Apple App Store Review Guidelines, information obtained through Apple HealthKit is processed solely in memory and local sandbox storage on your iPhone. It is <strong>never</strong> sold, <strong>never</strong> shared with third parties, <strong>never</strong> transmitted to external servers, and <strong>never</strong> used for advertising, marketing, or data mining.
+    </p>
+
+    <h2>3. Location Data (Sunrise, Sunset &amp; Morning Sky Conditions)</h2>
+    <p>
+      If you grant "While Using the App" location permission, BioCue uses your approximate location on-device to compute astronomical sunrise, solar noon, and sunset times. When checking local sky cloud-cover conditions, coordinates are rounded to two decimal places (~1.1 km coarse region) before querying public weather forecast endpoints (`api.open-meteo.com`). Precise coordinates are never logged or stored remotely.
+    </p>
+
+    <h2>4. Motion &amp; Fitness Data</h2>
+    <p>
+      If you grant Motion &amp; Fitness permission, BioCue queries iOS motion activity history locally on your iPhone upon wake-up to help estimate overnight rest duration without draining battery. Motion records never leave your device.
+    </p>
+
+    <h2>5. Reminders &amp; Optional Third-Party Task Portals</h2>
+    <p>
+      BioCue can optionally display your top upcoming tasks during your morning focus window:
+    </p>
+    <ul>
+      <li><strong>Apple Reminders:</strong> Read and updated locally via Apple EventKit; data never leaves your device.</li>
+      <li><strong>Optional Third-Party Portals (e.g., Trello, Todoist, Notion, TickTick, Google Tasks):</strong> Only enabled if you explicitly connect an account. Access tokens are stored locally in the encrypted iOS Keychain, and requests go directly from your iPhone to the provider you chose, governed by that provider's own privacy policy.</li>
+    </ul>
+
+    <h2>6. In-App Purchases &amp; Subscriptions</h2>
+    <p>
+      BioCue offers optional BioCue Pro subscriptions and a lifetime unlock processed entirely by Apple StoreKit 2 and the App Store. BioCue does not collect or view your payment card details or billing address. Subscriptions are subject to Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Standard Licensed Application End User License Agreement (EULA)</a>.
+    </p>
+
+    <h2>7. Data Deletion &amp; Control</h2>
+    <p>
+      Because all BioCue data resides locally on your iPhone, you are always in full control. You can revoke HealthKit, Location, Motion, Notification, or Reminders permissions at any time in iOS Settings, disconnect any task portal in BioCue Settings, or permanently delete all local BioCue data by uninstalling the app.
+    </p>
+
+    <h2>8. Children's Privacy</h2>
+    <p>
+      BioCue does not knowingly collect personal information from children under 13 (or the applicable age of digital consent in your jurisdiction).
+    </p>
+
+    <h2>9. Changes &amp; Contact</h2>
+    <p>
+      If we update this Privacy Policy, we will post the revised version on this page with an updated effective date. If you have any privacy questions or requests, please reach out via our <a href="./support.html">Support Page</a> or open an issue at <a href="https://github.com/adelao93/biocue-site/issues" target="_blank" rel="noopener">github.com/adelao93/biocue-site/issues</a>.
+    </p>
+
+    <footer>
+      <span>&copy; 2026 BioCue</span>
+      <span><a href="./index.html">Home</a> &middot; <a href="./support.html">Support</a></span>
+    </footer>
+  </div>
+</body>
+</html>

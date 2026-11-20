@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioCue — Active Circadian Routine & Biological Bedside Alarm</title>
+  <meta name="description" content="BioCue is a 100% on-device circadian routine orchestrator and biological bedside clock for iOS. Your schedule adapts dynamically when you actually wake up—with zero guilt and zero cloud accounts." />
+  <style>
+    :root {
+      --bg: #0f1210;
+      --surface: #181d1a;
+      --surface-elevated: #202723;
+      --border: #2c3630;
+      --text: #f3f1eb;
+      --muted: #a6afa8;
+      --accent: #e07a5f;
+      --matcha: #81b29a;
+      --ochre: #f2cc8f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Rounded", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(circle at top right, rgba(224, 122, 95, 0.12), transparent 45%),
+                  radial-gradient(circle at bottom left, rgba(129, 178, 154, 0.10), transparent 45%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--matcha); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 960px; margin: 0 auto; padding: 24px 20px 64px; }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0 36px;
+      border-bottom: 1px solid var(--border);
+    }
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--ochre), var(--accent));
+      display: inline-block;
+    }
+    .nav-links { display: flex; gap: 20px; font-size: 0.95rem; font-weight: 600; }
+    .nav-links a { color: var(--muted); }
+    .nav-links a:hover { color: var(--text); }
+    .hero { padding: 56px 0 40px; text-align: left; }
+    .pill {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(129, 178, 154, 0.14);
+      border: 1px solid rgba(129, 178, 154, 0.35);
+      color: var(--matcha);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-size: clamp(2.1rem, 5vw, 3.2rem);
+      line-height: 1.12;
+      margin: 0 0 18px;
+      letter-spacing: -0.03em;
+    }
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 680px;
+      margin: 0 0 28px;
+    }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.98rem;
+      transition: opacity 0.15s ease;
+    }
+    .btn-primary { background: var(--accent); color: #111; }
+    .btn-secondary { background: var(--surface-elevated); color: var(--text); border: 1px solid var(--border); }
+    .btn:hover { opacity: 0.9; text-decoration: none; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 32px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+    }
+    .card h3 { margin: 0 0 8px; font-size: 1.1rem; color: var(--ochre); }
+    .card p { margin: 0; font-size: 0.95rem; color: var(--muted); }
+    .privacy-banner {
+      margin-top: 36px;
+      background: linear-gradient(135deg, rgba(129, 178, 154, 0.12), rgba(24, 29, 26, 0.95));
+      border: 1px solid rgba(129, 178, 154, 0.3);
+      border-radius: 16px;
+      padding: 24px;
+    }
+    .privacy-banner h2 { margin: 0 0 8px; font-size: 1.25rem; }
+    .privacy-banner p { margin: 0; color: var(--muted); font-size: 0.96rem; }
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a class="brand" href="./index.html"><span class="brand-dot"></span>BioCue</a>
+      <div class="nav-links">
+        <a href="./privacy.html">Privacy Policy</a>
+        <a href="./support.html">Support</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <span class="pill">100% On-Device • Zero Accounts • No Wearable Required</span>
+      <h1>The circadian alarm &amp; daily routine that slides when life happens.</h1>
+      <p class="subtitle">
+        Other apps tell you how poorly you slept. BioCue tells you what to do right now—dynamically adjusting your sunlight, caffeine, focus blocks, and wind-down cues from the moment you actually wake up.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="./support.html">Join iOS TestFlight Beta / Get Support</a>
+        <a class="btn btn-secondary" href="./privacy.html">Read Our Privacy Promise</a>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Core Features">
+      <article class="card">
+        <h3>Dynamic Sliding Cascade</h3>
+        <p>Every morning habit anchors to your real wake time (T₀), while evening wind-down cues step backward from your upcoming bedtime goal and local solar sunset.</p>
+      </article>
+      <article class="card">
+        <h3>Native AlarmKit &amp; Wake Puzzles</h3>
+        <p>Full-screen alarm takeover with gentle progressive audio, CoreHaptics rhythms, and mindful wake challenges to stop groggy snooze loops.</p>
+      </article>
+      <article class="card">
+        <h3>True Red-Shift OLED Nightstand</h3>
+        <p>Transform your iPhone into a warm, circadian-safe bedside clock with locally bundled ambient soundscapes that fade cleanly as you drift off.</p>
+      </article>
+      <article class="card">
+        <h3>Zero-Guilt 7-Day Rhythm Wave</h3>
+        <p>No punitive streak resets. Track rolling 7-day circadian stability and optional Apple Health overnight sleep recovery without orthosomnia.</p>
+      </article>
+      <article class="card">
+        <h3>Live Activities &amp; Widgets</h3>
+        <p>Glance at your active biological cue right from the Lock Screen, Dynamic Island, Home Screen widgets, and Control Center.</p>
+      </article>
+      <article class="card">
+        <h3>Morning Task Portal</h3>
+        <p>Surface your top priorities during your morning cognitive peak via Apple Reminders and supported task portals—processed locally on your iPhone.</p>
+      </article>
+    </section>
+
+    <section class="privacy-banner">
+      <h2>Sovereign On-Device Privacy</h2>
+      <p>
+        BioCue runs 100% locally using Apple SwiftData and on-device solar math. There are no user accounts, no cloud databases, no third-party analytics SDKs, and your Apple Health data never leaves your iPhone.
+      </p>
+    </section>
+
+    <footer>
+      <span>&copy; 2026 BioCue. Built for iOS.</span>
+      <span>
+        <a href="./privacy.html">Privacy Policy</a> &middot;
+        <a href="./support.html">Support</a> &middot;
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Apple Standard EULA</a>
+      </span>
+    </footer>
+  </div>
+</body>
+</html>
