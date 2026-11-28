@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — BioCue</title>
   <meta name="description" content="BioCue Privacy Policy. 100% on-device circadian architecture with zero cloud accounts, zero tracking SDKs, and local-only Apple HealthKit processing." />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <meta property="og:title" content="Privacy Policy — BioCue" />
+  <meta property="og:description" content="BioCue Privacy Policy. 100% on-device circadian architecture with zero cloud accounts, zero tracking SDKs, and local-only Apple HealthKit processing." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://adelao93.github.io/biocue-site/privacy.html" />
+  <meta property="og:image" content="https://adelao93.github.io/biocue-site/favicon.svg" />
+  <meta name="twitter:card" content="summary" />
   <style>
     :root {
       --bg: #0f1210;
@@ -90,7 +97,7 @@
 
     <h2>1. Zero Accounts, Zero Tracking, Zero Remote Servers</h2>
     <p>
-      BioCue does not require registration, email sign-in, or cloud profiles. All circadian anchors, completed daily habits, medication schedules, and sleep logs are stored exclusively on your device using Apple SwiftData, UserDefaults (including the App Group container shared strictly with BioCue's own Widgets and Live Activities), and the iOS Keychain.
+      BioCue does not require registration, email sign-in, or cloud profiles. All circadian anchors, completed daily habits, medication schedules, and sleep logs are stored exclusively on your device using encrypted Apple SwiftData (included in your standard encrypted iPhone backups so upgrading devices preserves your schedule, with optional local JSON export/import in Settings), Data-Protection-enabled local files (including App Group snapshots shared strictly with BioCue's own Widgets and Live Activities), hardware-backed iOS Keychain storage for task-portal credentials and trial state, and minimal non-sensitive UI preferences in UserDefaults. Temporary caches and optional diagnostic logs remain backup-excluded.
     </p>
     <p>
       BioCue contains no third-party advertising SDKs, no behavioral analytics trackers, and no cross-app tracking identifiers.
@@ -110,7 +117,7 @@
 
     <h2>3. Location Data (Sunrise, Sunset &amp; Morning Sky Conditions)</h2>
     <p>
-      If you grant "While Using the App" location permission, BioCue uses your approximate location on-device to compute astronomical sunrise, solar noon, and sunset times. When checking local sky cloud-cover conditions, coordinates are rounded to two decimal places (~1.1 km coarse region) before querying public weather forecast endpoints (`api.open-meteo.com`). Precise coordinates are never logged or stored remotely.
+      If you grant "While Using the App" location permission, BioCue uses your approximate location on-device to compute astronomical sunrise, solar noon, and sunset times. When checking local sky cloud-cover conditions, coordinates are rounded to two decimal places (~1.1 km coarse region) before querying public weather forecast endpoints (<code>api.open-meteo.com</code>). Precise coordinates are never logged or stored remotely.
     </p>
 
     <h2>4. Motion &amp; Fitness Data</h2>
@@ -126,25 +133,41 @@
       <li><strong>Apple Reminders:</strong> Read and updated locally via Apple EventKit; data never leaves your device.</li>
       <li><strong>Optional Third-Party Portals (e.g., Trello, Todoist, Notion, TickTick, Google Tasks):</strong> Only enabled if you explicitly connect an account. Access tokens are stored locally in the encrypted iOS Keychain, and requests go directly from your iPhone to the provider you chose, governed by that provider's own privacy policy.</li>
     </ul>
+    <p>
+      <strong>Google API Services User Data Policy (Limited Use):</strong> BioCue's use and transfer of information received from Google APIs to any other app will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements. Google Tasks titles, due dates, and completion status are fetched directly on your device solely to display and complete your chosen #1 Priority Task; BioCue never stores Google user data on developer servers or uses it for advertising or AI model training.
+    </p>
 
-    <h2>6. In-App Purchases &amp; Subscriptions</h2>
+    <h2>6. Optional Wake-Up Photo Selection</h2>
+    <p>
+      If you optionally select a wake-up photo using the system iOS photo picker, only that selected photo is processed on-device: BioCue center-crops it, strips EXIF and location metadata, and saves it locally in a Data-Protection-enabled, backup-excluded file. Photos are never uploaded or shared with third parties.
+    </p>
+
+    <h2>7. Optional On-Device Diagnostics &amp; Apple MetricKit</h2>
+    <p>
+      Diagnostic logging is disabled by default in production releases. If you explicitly opt in to diagnostic capture in Settings, entries are automatically scrubbed of sensitive personal or credential fields and stored solely on-device in a 7-day, 2 MB backup-excluded ring buffer. Reports are never transmitted automatically; copying a diagnostic summary uses an expiring local-only clipboard entry under your direct control. BioCue also listens on-device to system Apple MetricKit diagnostics when available without uploading personal health or habit data.
+    </p>
+
+    <h2>8. In-App Purchases &amp; Subscriptions</h2>
     <p>
       BioCue offers optional BioCue Pro subscriptions and a lifetime unlock processed entirely by Apple StoreKit 2 and the App Store. BioCue does not collect or view your payment card details or billing address. Subscriptions are subject to Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Standard Licensed Application End User License Agreement (EULA)</a>.
     </p>
 
-    <h2>7. Data Deletion &amp; Control</h2>
+    <h2>9. Data Deletion &amp; Control</h2>
     <p>
-      Because all BioCue data resides locally on your iPhone, you are always in full control. You can revoke HealthKit, Location, Motion, Notification, or Reminders permissions at any time in iOS Settings, disconnect any task portal in BioCue Settings, or permanently delete all local BioCue data by uninstalling the app.
+      Because all BioCue data resides locally on your iPhone, you are always in full control. You can revoke HealthKit, Location, Motion, Notification, or Reminders permissions at any time in iOS Settings, disconnect any connected task portal in BioCue Settings, or wipe all local schedule records, cached tasks, diagnostic logs, and stored task-portal Keychain tokens at once via <strong>BioCue &rarr; Settings &rarr; Privacy, Data &amp; Legal &rarr; Clear All Local Data</strong>.
+    </p>
+    <p>
+      <em>iOS Keychain Note:</em> Uninstalling BioCue removes the app's sandbox container, SwiftData database, App Group files, and UserDefaults, while certain iOS Keychain items (such as hardware-backed task-portal credentials if not disconnected beforehand, and anti-abuse reverse-trial timestamps) may persist in the system Keychain across reinstalls. Use the in-app reset action above prior to uninstalling if you want all connected portal credentials wiped immediately.
     </p>
 
-    <h2>8. Children's Privacy</h2>
+    <h2>10. Children's Privacy</h2>
     <p>
       BioCue does not knowingly collect personal information from children under 13 (or the applicable age of digital consent in your jurisdiction).
     </p>
 
-    <h2>9. Changes &amp; Contact</h2>
+    <h2>11. Changes &amp; Contact</h2>
     <p>
-      If we update this Privacy Policy, we will post the revised version on this page with an updated effective date. If you have any privacy questions or requests, please reach out via our <a href="./support.html">Support Page</a> or open an issue at <a href="https://github.com/adelao93/biocue-site/issues" target="_blank" rel="noopener">github.com/adelao93/biocue-site/issues</a>.
+      If we update this Privacy Policy, we will post the revised version on this page with an updated effective date. If you have any privacy questions or requests, please visit our <a href="./support.html">Support Page</a> or open an issue at <a href="https://github.com/adelao93/biocue-site/issues" target="_blank" rel="noopener">github.com/adelao93/biocue-site/issues</a> (note that GitHub Issues are public—do not post private credentials or personal health details there).
     </p>
 
     <footer>
